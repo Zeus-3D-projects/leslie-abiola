@@ -1,0 +1,860 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leslie Abiola — Founder & CEO of Zeuswrap & Handwrk</title>
+  <meta name="description" content="Leslie Abiola is the founder and CEO of Zeuswrap, Nigeria's leading automotive vinyl wrapping and PPF studio (600+ vehicles across Nigeria & the UK), and founder of Handwrk." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Leslie Abiola — Founder & CEO of Zeuswrap & Handwrk" />
+  <meta property="og:description" content="Car wraps, PPF and automotive culture from Lagos to the UK. 600+ vehicles transformed." />
+  <meta property="og:image" content="assets/images/leslie-portrait.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23000'/><path d='M18 4 8 18h7l-2 10 11-15h-7z' fill='%23fff'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,401,500,501,700,701&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <img class="loader-logo" src="assets/images/zeuswrap-logo.png" alt="" />
+    <div class="loader-bar"><span id="loaderBar"></span></div>
+  </div>
+
+  <!-- Portfolite Frosted Glass Navigation -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="brand" aria-label="Leslie Abiola, home">
+        <img class="logo-mono" data-bind-src="person.logo" alt="" width="28" height="28" />
+        <span class="brand-name">Leslie Abiola</span>
+      </a>
+      <div class="nav-right">
+        <nav class="nav-links" id="navLinks" aria-label="Main">
+          <a href="leslie-abiola.html" class="nav-highlight">Who Is Leslie</a>
+          <a href="#about">Biography</a>
+          <a href="#process">Process</a>
+          <a href="#services">Services</a>
+          <a href="#work">Projects</a>
+          <a href="#handwrk">Handwrk</a>
+          <a href="#news">Press</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <a href="leslie-abiola.html" class="btn-pill btn-pill-nav magnetic">
+          <span>Who Is Leslie Abiola</span>
+          <span class="btn-arrow" aria-hidden="true">↗</span>
+        </a>
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ==================== HERO (LESLIE ABIOLA FIRST — PORTFOLITE STYLE) ==================== -->
+    <section class="hero-section" id="top">
+      <div class="hero-ambient" aria-hidden="true"></div>
+
+      <div class="hero-center">
+        <!-- Founder Identity Pill with Avatar + Role + University Credential -->
+        <a href="leslie-abiola.html" class="pf-founder-hero-pill reveal" aria-label="Read full biography of Leslie Abiola">
+          <img src="assets/images/leslie-portrait.png" alt="Leslie Abiola" class="pf-founder-avatar" />
+          <div class="pf-founder-pill-meta">
+            <span class="pf-founder-pill-top">
+              <span class="pf-dot"></span>
+              <span data-bind="person.role">Founder &amp; CEO · Zeuswrap, Zeus3D &amp; Handwrk</span>
+            </span>
+            <span class="pf-founder-pill-sub" data-bind="person.educationBadge">MSc International Business · University of Sunderland, UK</span>
+          </div>
+          <span class="pf-founder-pill-cta">Full Bio ↗</span>
+        </a>
+
+        <!-- Giant Satoshi centered H1 with word-by-word blur reveal -->
+        <h1 class="pf-h1" id="heroHeading">
+          I'm <em>Leslie</em> <em>Abiola.</em>
+        </h1>
+
+        <p class="pf-hero-kicker reveal" data-bind="person.heroSubtitle">
+          Automotive Entrepreneur · MSc International Business (University of Sunderland, UK)
+        </p>
+
+        <p class="pf-hero-sub reveal" data-bind="person.tagline"></p>
+
+        <!-- Dual Portfolite rim-lit pill buttons -->
+        <div class="pf-cta-row reveal">
+          <a href="leslie-abiola.html" class="pf-glow-btn pf-glow-btn--primary magnetic">
+            <span class="pf-glow-inner">
+              <span>Who Is Leslie Abiola? · Full Profile ↗</span>
+              <span class="pf-glow-spot pf-glow-spot--tl" aria-hidden="true"></span>
+              <span class="pf-glow-spot pf-glow-spot--br" aria-hidden="true"></span>
+            </span>
+          </a>
+          <a href="#about" class="pf-glow-btn magnetic">
+            <span class="pf-glow-inner">
+              <span>His Story &amp; University</span>
+              <span class="pf-glow-spot pf-glow-spot--tl" aria-hidden="true"></span>
+              <span class="pf-glow-spot pf-glow-spot--br" aria-hidden="true"></span>
+            </span>
+          </a>
+          <a href="#studioSection" class="pf-glow-btn magnetic">
+            <span class="pf-glow-inner">
+              <span>3D Wrap Studio</span>
+              <span class="pf-glow-spot pf-glow-spot--tl" aria-hidden="true"></span>
+              <span class="pf-glow-spot pf-glow-spot--br" aria-hidden="true"></span>
+            </span>
+          </a>
+        </div>
+
+        <!-- Quick Executive Credentials Strip (First thing visitors see) -->
+        <div class="pf-founder-quick-grid reveal" aria-label="Leslie Abiola credentials at a glance">
+          <div class="pf-quick-card">
+            <span class="pf-quick-label">University &amp; Degree</span>
+            <strong class="pf-quick-val">University of Sunderland, UK</strong>
+            <span class="pf-quick-sub">MSc in International Business</span>
+          </div>
+          <div class="pf-quick-card">
+            <span class="pf-quick-label">Ventures Founded</span>
+            <strong class="pf-quick-val">Zeuswrap · Zeus3D · Handwrk</strong>
+            <span class="pf-quick-sub">Auto Customization, F1 Art &amp; Mobility Tech</span>
+          </div>
+          <div class="pf-quick-card">
+            <span class="pf-quick-label">Vehicles Transformed</span>
+            <strong class="pf-quick-val">600+ Wrapped (NG &amp; UK)</strong>
+            <span class="pf-quick-sub">Operating 24/7 in Lagos Since 2021</span>
+          </div>
+          <div class="pf-quick-card">
+            <span class="pf-quick-label">Motorsport Footprint</span>
+            <strong class="pf-quick-val">Formula 1 &amp; Grand Prix</strong>
+            <span class="pf-quick-sub">European Racing &amp; Supercar Culture</span>
+          </div>
+        </div>
+
+        <!-- Portfolite scroll divider row: line — text — icon — text — line -->
+        <div class="pf-scroll-divider reveal" aria-hidden="true">
+          <span class="pf-divider-line"></span>
+          <span class="pf-scroll-text">Scroll down</span>
+          <span class="pf-mouse-icon"><span class="pf-mouse-wheel"></span></span>
+          <span class="pf-scroll-text">to explore Leslie's world</span>
+          <span class="pf-divider-line"></span>
+        </div>
+
+        <!-- Infinite Press Logo Ticker Strip -->
+        <div class="pf-marquee-wrap reveal" aria-label="Featured in national media">
+          <div class="pf-marquee" id="heroMarquee"></div>
+        </div>
+      </div>
+
+      <!-- Portfolite 3-Card Bento Showcase Row (Leslie Abiola Front & Center) -->
+      <div class="pf-showcase-wrap">
+        <div class="pf-showcase-grid" id="heroShowcase"></div>
+
+        <!-- Secondary Signature Builds Row -->
+        <div class="pf-showcase-grid" id="signatureShowcase"></div>
+
+        <!-- Interactive 3D Car Wrap Studio Card (Portfolite Masked Border Frame) -->
+        <div class="pf-studio-frame reveal" id="studioSection">
+          <div class="pf-studio-mask-border" aria-hidden="true"></div>
+
+          <div class="pf-studio-stage-wrap" id="studioStageWrap">
+            <div class="hero-canvas" id="carStage" aria-label="Interactive 3D car. Drag to rotate, tap to reveal a fact about Leslie."></div>
+
+            <!-- Instant Interactive Studio Car Preview (visible while 3D WebGL initializes or offline) -->
+            <div class="car-preview-fallback" id="carPreviewFallback" aria-label="Interactive car wrap preview. Drag or tap to interact.">
+              <div class="car-preview-turntable" id="carPreviewTurntable">
+                <div class="car-preview-floor-ring" aria-hidden="true"></div>
+                <div class="car-preview-vehicle" id="carPreviewVehicle">
+                  <img class="car-preview-base" src="assets/images/wrap-ferrari-red.jpg" alt="Studio wrapped Ferrari coupe" draggable="false" />
+                  <div class="car-preview-tint" id="carPreviewTint" aria-hidden="true"></div>
+                  <div class="car-preview-sheen" id="carPreviewSheen" aria-hidden="true"></div>
+                </div>
+              </div>
+              <div class="car-preview-badge" id="carPreviewBadge">
+                <span class="pf-dot-sm"></span>
+                <span id="carPreviewStatus">Studio Live Preview · Loading 3D WebGL Mesh…</span>
+              </div>
+            </div>
+
+            <div class="pf-studio-top-bar">
+              <div class="pf-tag-pill">
+                <span class="pf-dot-sm"></span>
+                <span>Interactive 3D Wrap Configurator</span>
+              </div>
+              <span class="hint"><span class="drag-icon" aria-hidden="true">⟷</span> Drag to rotate · Tap car for a fact</span>
+            </div>
+          </div>
+
+          <aside class="studio" aria-label="Wrap studio controls">
+            <div class="studio-head">
+              <div>
+                <span class="studio-label">Live Finish &amp; Colour</span>
+                <div class="studio-readout" id="studioReadout" aria-live="polite"></div>
+              </div>
+              <button class="pf-mini-btn" id="shuffleBtn" type="button">↻ Surprise me</button>
+            </div>
+
+            <div class="studio-controls-grid">
+              <div>
+                <span class="studio-sub-label">Select Finish</span>
+                <div class="finishes" id="finishes" role="radiogroup" aria-label="Finish"></div>
+              </div>
+              <div>
+                <span class="studio-sub-label">Select Vinyl Colour</span>
+                <div class="swatches" id="swatches" role="radiogroup" aria-label="Colour"></div>
+              </div>
+            </div>
+
+            <div class="studio-fact" id="studioFact" aria-live="polite">
+              <span class="fact-num" id="factNum">01</span>
+              <span class="fact-text" id="factText">Tap the 3D car or switch wraps to uncover Leslie's story.</span>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Portfolite Category Pill Tags Row -->
+        <div class="pf-hero-tags reveal" id="heroTags"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 01 WHO IS LESLIE ABIOLA (PORTFOLITE SPLIT + DOSSIER) ==================== -->
+    <section class="pf-section" id="about">
+      <div class="pf-container pf-split">
+        <!-- Left Content Column -->
+        <div class="pf-col-copy">
+          <div class="pf-section-pill reveal">
+            <span class="pf-dot-sm"></span>
+            <span>01 · Who Is Leslie Abiola?</span>
+          </div>
+          <h2 class="pf-h2 reveal" id="aboutHeading">Who is <em>Leslie</em> <em>Abiola?</em></h2>
+          <p class="tap-hint reveal">Tap the highlighted bars below to uncover key milestones</p>
+
+          <div class="pf-bio-paras" id="aboutParas"></div>
+          <div id="aboutQuotes"></div>
+
+          <!-- University & Academic Pedigree Feature Card -->
+          <div class="pf-uni-card reveal" id="uniCardHome">
+            <div class="pf-mask-border" aria-hidden="true"></div>
+            <div class="pf-uni-badge">
+              <span class="pf-dot-sm"></span>
+              <span>Academic Pedigree · United Kingdom</span>
+            </div>
+            <h3 class="pf-uni-title">University of Sunderland, UK</h3>
+            <p class="pf-uni-degree">Master of Science (MSc) in International Business</p>
+            <p class="pf-uni-desc">
+              Blending formal postgraduate training in international business strategy and global value chains at the University of Sunderland with hands-on British &amp; European motorsport culture—scaling Zeuswrap, Zeus3D, and Handwrk across Nigeria and the UK.
+            </p>
+          </div>
+
+          <div class="pf-line reveal"></div>
+
+          <!-- Skill / Focus Pills -->
+          <div class="pf-chip-cloud reveal" id="aboutTags"></div>
+
+          <div class="pf-line reveal"></div>
+
+          <!-- Portfolite 3-Column Experience & Education Rows -->
+          <div class="pf-exp-list" id="expList" aria-label="Leadership roles and education"></div>
+
+          <div class="pf-cta-row pf-cta-row--left reveal">
+            <a href="leslie-abiola.html" class="pf-glow-btn pf-glow-btn--primary magnetic">
+              <span class="pf-glow-inner">
+                <span>Explore Full “Who Is Leslie Abiola” Page ↗</span>
+                <span class="pf-glow-spot pf-glow-spot--tl" aria-hidden="true"></span>
+                <span class="pf-glow-spot pf-glow-spot--br" aria-hidden="true"></span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Portrait & Secondary Photo Stack Column -->
+        <div class="pf-portrait-stack">
+          <figure class="pf-portrait-card reveal" id="portrait">
+            <div class="pf-mask-border" aria-hidden="true"></div>
+            <img data-bind-src="person.portrait" alt="Leslie Abiola standing beside a classic race car" loading="lazy" />
+            <div class="spot" aria-hidden="true"></div>
+            <button class="spot-btn" type="button" aria-label="Reveal Leslie's photo in full colour">
+              <span>Touch to reveal full colour</span>
+            </button>
+            <figcaption class="pf-float-cap">
+              <span data-bind="person.name">Leslie Abiola</span>
+              <span class="pf-cap-sep">·</span>
+              <span data-bind="person.location">Lagos, Nigeria &amp; UK</span>
+            </figcaption>
+          </figure>
+
+          <!-- Executive 6-Pillar Dossier Grid -->
+          <div class="pf-dossier-grid reveal" id="bioPillarsHome"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02 PROCESS & TIMELINE ==================== -->
+    <section class="pf-section" id="process">
+      <div class="pf-container pf-split pf-split--reverse-mobile">
+        <!-- Left Grayscale Motorsport Visual -->
+        <div class="pf-process-media reveal">
+          <div class="pf-mask-border" aria-hidden="true"></div>
+          <img data-bind-src="person.secondaryPhoto" alt="Leslie Abiola studying Formula 1 cars in a Red Bull Racing jacket" loading="lazy" />
+          <blockquote class="pf-media-quote" id="bandQuote">
+            “Wrapping is how car owners express personality, protect their investment, and join the global auto conversation.”
+          </blockquote>
+        </div>
+
+        <!-- Right Process Steps -->
+        <div class="pf-col-copy">
+          <div class="pf-section-pill reveal">
+            <span class="pf-dot-sm"></span>
+            <span>02 · Philosophy &amp; Craft</span>
+          </div>
+          <h2 class="pf-h2 reveal">Crafted for <em>identity,</em> engineered for <em>protection.</em></h2>
+          <p class="pf-lead reveal">
+            While traditional spray painting permanently alters factory coat and releases hazardous chemical fumes, precision PVC wraps and self-healing PPF protect both your vehicle and resale value.
+          </p>
+
+          <!-- Portfolite Numbered Step Cards -->
+          <div class="pf-process-cards" id="processCards"></div>
+
+          <div class="pf-cta-row pf-cta-row--left reveal">
+            <a href="#contact" class="pf-glow-btn pf-glow-btn--primary magnetic">
+              <span class="pf-glow-inner"><span>Book a Consultation</span></span>
+            </a>
+            <a href="#services" class="pf-glow-btn magnetic">
+              <span class="pf-glow-inner"><span>Explore Services</span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Flip-Card Journey Timeline -->
+      <div class="pf-container pf-timeline-header">
+        <div>
+          <div class="pf-section-pill reveal">
+            <span class="pf-dot-sm"></span>
+            <span>Key Milestones · 2020 — 2026</span>
+          </div>
+          <h3 class="pf-h3 reveal">The Journey So Far</h3>
+        </div>
+        <p class="tap-hint reveal">Drag horizontally or tap any card to flip →</p>
+      </div>
+      <div class="timeline-wrap" id="journey">
+        <div class="timeline-progress"><span id="timelineProgress"></span></div>
+        <ol class="timeline" id="timeline"></ol>
+      </div>
+    </section>
+
+    <!-- ==================== 03 SERVICES & TICKER ==================== -->
+    <section class="pf-section" id="services">
+      <div class="pf-container">
+        <div class="pf-services-top">
+          <div>
+            <div class="pf-section-pill reveal">
+              <span class="pf-dot-sm"></span>
+              <span>03 · Zeuswrap Studio</span>
+            </div>
+            <h2 class="pf-h2 reveal">Every kind of <em>wrap</em> you can imagine.</h2>
+            <p class="pf-lead reveal">
+              From full satin colour changes and self-healing clear PPF to commercial fleet branding—installed 24/7 in Lagos for clients nationwide.
+            </p>
+          </div>
+          <div class="badge-247 reveal">
+            <span class="pulse"></span>
+            <span>Open 24/7 · Lagos &amp; Nationwide</span>
+          </div>
+        </div>
+
+        <!-- Portfolite 2-Column Dark Glass Service Cards -->
+        <div class="pf-service-grid" id="serviceGrid"></div>
+
+        <!-- Portfolite Dual Scrolling Service Ticker Rows -->
+        <div class="pf-ticker-stack reveal" aria-hidden="true">
+          <div class="pf-ticker-row" id="serviceTicker1"></div>
+          <div class="pf-ticker-row pf-ticker-row--reverse" id="serviceTicker2"></div>
+        </div>
+
+        <!-- Interactive Accordion List for Quick 3D Preview -->
+        <ul class="service-list" id="serviceList" hidden></ul>
+      </div>
+    </section>
+
+    <!-- ==================== 04 SELECTED WORK / PROJECTS ==================== -->
+    <section class="pf-section" id="work">
+      <div class="pf-container">
+        <div class="pf-services-top">
+          <div>
+            <div class="pf-section-pill reveal">
+              <span class="pf-dot-sm"></span>
+              <span>04 · Selected Builds</span>
+            </div>
+            <h2 class="pf-h2 reveal">Cars wrapped from <em>Lagos</em> to the <em>UK.</em></h2>
+          </div>
+          <div class="filters reveal" id="filters" role="tablist" aria-label="Filter by location"></div>
+        </div>
+
+        <!-- Portfolite Bento Project Cards -->
+        <div class="gallery" id="gallery"></div>
+
+        <!-- Portfolite Dark Stats Container (framer-7sx5b6) -->
+        <div class="pf-stats-banner reveal" id="stats"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 05 HANDWRK VENTURE ==================== -->
+    <section class="pf-section handwrk" id="handwrk">
+      <div class="pf-container pf-split">
+        <div class="pf-col-copy">
+          <div class="pf-section-pill reveal">
+            <span class="pf-dot-sm"></span>
+            <span>05 · Currently Building · Live in Lagos</span>
+          </div>
+          <h2 class="pf-h2 reveal"><span data-bind="handwrk.name">Handwrk</span> <em>Roadside.</em></h2>
+          <p class="pf-lead reveal" data-bind="handwrk.tagline"></p>
+          <p class="pf-body-muted reveal" data-bind="handwrk.summary"></p>
+
+          <ol class="hw-steps" id="hwSteps"></ol>
+          <ul class="chips reveal" id="hwFeatures"></ul>
+
+          <div class="pf-cta-row pf-cta-row--left reveal">
+            <a class="pf-glow-btn pf-glow-btn--primary magnetic" id="hwDriver" target="_blank" rel="noopener">
+              <span class="pf-glow-inner"><span>Get Roadside Help ↗</span></span>
+            </a>
+            <a class="pf-glow-btn magnetic" id="hwPro" target="_blank" rel="noopener">
+              <span class="pf-glow-inner"><span>Join as a Verified Pro</span></span>
+            </a>
+          </div>
+          <p class="coverage reveal"><span class="muted">Active Lagos Coverage:</span> <span id="hwCoverage"></span></p>
+        </div>
+
+        <!-- Interactive Live GPS Phone Mockup -->
+        <div class="phone-col reveal">
+          <div class="phone" aria-hidden="true">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="map">
+                <svg class="roads" viewBox="0 0 300 520" preserveAspectRatio="none">
+                  <path d="M-10 120 C 80 140, 160 90, 310 130" />
+                  <path d="M-10 300 C 90 280, 200 340, 310 290" />
+                  <path d="M80 -10 C 100 160, 60 330, 110 530" />
+                  <path d="M220 -10 C 200 140, 250 330, 210 530" />
+                  <path id="routePath" class="route" d="M220 60 C 205 140, 160 200, 150 250 S 115 320, 105 345" />
+                </svg>
+                <div class="pin you"><span></span></div>
+                <div class="pin pro" id="proDot"><span></span></div>
+              </div>
+              <div class="sheet">
+                <div class="sheet-grip"></div>
+                <p class="sheet-step" id="phoneStep">Step 1 of 5</p>
+                <p class="sheet-status" id="phoneStatus">Finding the nearest pro…</p>
+                <div class="sheet-bar"><span id="phoneBar"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 06 MEDIA COVERAGE / AS SEEN ON (INFINITE MOMENTUM CAROUSEL) ==================== -->
+    <section class="pf-section press news-section" id="press">
+      <div class="pf-container">
+        <div class="pf-news-header reveal">
+          <div class="pf-section-pill">
+            <span class="pf-dot-sm"></span>
+            <span>06 · Media Coverage</span>
+          </div>
+          <h2 class="pf-h2">As Seen <em>On.</em></h2>
+          <div class="pf-accent-rule" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="news-scroll-wrapper reveal" id="newsWrapper" aria-label="Media coverage carousel. Drag or swipe horizontally.">
+        <div class="news-scroll-track" id="newsTrack">
+          <!-- 4x infinite loop cards injected by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 07 FAQ (PORTFOLITE SPLIT ACCORDION) ==================== -->
+    <section class="pf-section" id="faq">
+      <div class="pf-container pf-split">
+        <div class="pf-col-copy">
+          <div class="pf-section-pill reveal">
+            <span class="pf-dot-sm"></span>
+            <span>07 · Answers &amp; Insights</span>
+          </div>
+          <h2 class="pf-h2 reveal">Frequently asked <em>questions.</em></h2>
+          <p class="pf-lead reveal">
+            Everything you need to know about automotive vinyl wraps, self-healing PPF, vehicle resale value in Nigeria, and how Zeuswrap operates.
+          </p>
+          <div class="pf-faq-photo reveal">
+            <div class="pf-mask-border" aria-hidden="true"></div>
+            <img src="assets/images/leslie-redbull.png" alt="Leslie Abiola inspecting Formula 1 cars" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="pf-faq-list" id="faqList" aria-label="Frequently asked questions"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 08 CONTACT & PORTFOLITE FOOTER CTA ==================== -->
+    <section class="pf-footer-cta" id="contact">
+      <div class="hero-ambient hero-ambient--bottom" aria-hidden="true"></div>
+
+      <div class="pf-container">
+        <div class="pf-cta-hero">
+          <div class="pf-badge-wrap reveal">
+            <div class="pf-badge">
+              <span class="pf-dot"></span>
+              <span>Available 24/7 · Lagos Studio &amp; Nationwide</span>
+            </div>
+            <div class="pf-badge-sheen" aria-hidden="true"></div>
+          </div>
+
+          <h2 class="pf-h1 pf-h1--footer reveal">
+            Curious about what we can create together? Let’s bring your <em>build</em> to <em>life.</em>
+          </h2>
+
+          <p class="pf-hero-sub reveal">
+            Send your vehicle details for a tailored wrap or PPF consultation on WhatsApp, or reach out directly for fleet branding and partnerships.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="pf-contact-card reveal">
+            <h3 class="pf-card-heading">Direct Channels</h3>
+            <p class="pf-body-muted">Connect with Leslie Abiola and the Zeuswrap team across social platforms or visit our 24/7 studio in Lagos.</p>
+            <ul class="contact-list" id="contactList"></ul>
+          </div>
+
+          <form class="form reveal" id="contactForm" novalidate>
+            <h3 class="pf-card-heading">Start a Wrap Enquiry</h3>
+            <div class="form-row-2">
+              <label><span>Your Name *</span><input name="name" required autocomplete="name" placeholder="e.g. Tunde Bakare" /></label>
+              <label><span>Vehicle (Make &amp; Model)</span><input name="car" placeholder="e.g. Mercedes-AMG G63" /></label>
+            </div>
+            <label><span>Service Required</span><select name="service" id="serviceSelect"></select></label>
+            <label><span>Project Notes</span><textarea name="message" rows="3" placeholder="Preferred colour, satin/gloss/PPF finish, or fleet size…"></textarea></label>
+            <button class="pf-glow-btn pf-glow-btn--primary pf-glow-btn--full magnetic" type="submit">
+              <span class="pf-glow-inner"><span>Send Request via WhatsApp ↗</span></span>
+            </button>
+            <p class="form-note" id="formNote" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <!-- Portfolite Social Links Bar with Vertical Dividers -->
+        <div class="pf-social-bar reveal" id="footerSocials"></div>
+
+        <!-- Portfolite Bottom Copyright Row -->
+        <footer class="footer-row">
+          <span>© <span id="year"></span> Leslie Abiola · Zeuswrap &amp; Handwrk</span>
+          <span class="credit">3D Studio: Ferrari 458 Italia (CC BY 4.0)</span>
+          <a href="#top" class="back-top">Back to top ↑</a>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <!-- Fixed Progressive Bottom Blur (Portfolite signature) -->
+  <div class="pf-bottom-blur" aria-hidden="true"></div>
+
+  <!-- Discovery tracker -->
+  <div class="discover" id="discover" aria-live="polite">
+    <div class="discover-ring" aria-hidden="true">
+      <svg viewBox="0 0 36 36">
+        <circle cx="18" cy="18" r="15.5" />
+        <circle id="discoverArc" cx="18" cy="18" r="15.5" />
+      </svg>
+    </div>
+    <div class="discover-text">
+      <strong id="discoverCount">0 / 0</strong>
+      <span id="discoverLabel">milestones uncovered</span>
+    </div>
+    <button class="text-btn" id="revealAll" type="button">Reveal all</button>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+    <img id="lbImg" alt="" />
+    <p id="lbCap"></p>
+  </div>
+
+  <script src="js/car-model-data.js"></script>
+  <script src="js/content.js"></script>
+  <script src="js/main.js"></script>
+  <script type="module">
+    import * as THREE from "three";
+    import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+    import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+    import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
+    import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+
+    const stage = document.getElementById("carStage");
+    const emit = (name, detail) => window.dispatchEvent(new CustomEvent(name, { detail }));
+    const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function supportsWebGL() {
+      try {
+        const c = document.createElement("canvas");
+        return !!(window.WebGLRenderingContext && (c.getContext("webgl2") || c.getContext("webgl")));
+      } catch {
+        return false;
+      }
+    }
+
+    function base64ToArrayBuffer(b64) {
+      const bin = atob(b64);
+      const len = bin.length;
+      const bytes = new Uint8Array(len);
+      for (let i = 0; i < len; i++) {
+        bytes[i] = bin.charCodeAt(i);
+      }
+      return bytes.buffer;
+    }
+
+    const FINISHES = {
+      Gloss:          { metalness: 0.5,  roughness: 0.28, clearcoat: 1.0,  clearcoatRoughness: 0.02, iridescence: 0, envMapIntensity: 0.95 },
+      Satin:          { metalness: 0.55, roughness: 0.46, clearcoat: 0.32, clearcoatRoughness: 0.38, iridescence: 0, envMapIntensity: 0.72 },
+      Matte:          { metalness: 0.25, roughness: 0.85, clearcoat: 0.0,  clearcoatRoughness: 1.0,  iridescence: 0, envMapIntensity: 0.42 },
+      Chrome:         { metalness: 1.0,  roughness: 0.05, clearcoat: 1.0,  clearcoatRoughness: 0.0,  iridescence: 0, envMapIntensity: 1.15 },
+      "Colour-shift": { metalness: 0.85, roughness: 0.22, clearcoat: 1.0,  clearcoatRoughness: 0.03, iridescence: 1, envMapIntensity: 1.0 },
+    };
+    const LERP_KEYS = ["metalness", "roughness", "clearcoat", "clearcoatRoughness", "iridescence", "envMapIntensity"];
+
+    async function init() {
+      const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 0.95;
+      stage.appendChild(renderer.domElement);
+
+      const scene = new THREE.Scene();
+      const BG = new THREE.Color("#050505");
+      scene.background = BG;
+      scene.fog = new THREE.Fog(BG, 11, 22);
+      const pmrem = new THREE.PMREMGenerator(renderer);
+      scene.environment = pmrem.fromScene(new RoomEnvironment(renderer), 0.04).texture;
+
+      const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100);
+      camera.position.set(5.6, 1.85, -6.2);
+
+      const controls = new OrbitControls(camera, renderer.domElement);
+      controls.target.set(0, 0.45, 0);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.06;
+      controls.enablePan = false;
+      controls.enableZoom = false;
+      controls.minPolarAngle = Math.PI / 2.95;
+      controls.maxPolarAngle = Math.PI / 2.08;
+      controls.autoRotate = !reduceMotion;
+      controls.autoRotateSpeed = 0.75;
+      renderer.domElement.style.touchAction = "pan-y";
+
+      let resumeTimer;
+      controls.addEventListener("start", () => {
+        controls.autoRotate = false;
+        clearTimeout(resumeTimer);
+      });
+      controls.addEventListener("end", () => {
+        resumeTimer = setTimeout(() => (controls.autoRotate = !reduceMotion), 3500);
+      });
+
+      let downPos = null;
+      renderer.domElement.addEventListener("pointerdown", (e) => {
+        downPos = { x: e.clientX, y: e.clientY, t: performance.now() };
+      });
+      renderer.domElement.addEventListener("pointerup", (e) => {
+        if (!downPos) return;
+        const dist = Math.hypot(e.clientX - downPos.x, e.clientY - downPos.y);
+        const dt = performance.now() - downPos.t;
+        downPos = null;
+        if (dist < 6 && dt < 350) emit("car:tap");
+      });
+
+      const floorTex = radialTexture([
+        [0, "rgba(38,38,42,1)"],
+        [0.45, "rgba(14,14,16,1)"],
+        [1, "rgba(5,5,5,1)"],
+      ]);
+      const floor = new THREE.Mesh(
+        new THREE.CircleGeometry(9, 64),
+        new THREE.MeshBasicMaterial({ map: floorTex, toneMapped: false })
+      );
+      floor.rotation.x = -Math.PI / 2;
+      scene.add(floor);
+
+      const ring = new THREE.Mesh(
+        new THREE.RingGeometry(3.0, 3.03, 128),
+        new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.32, toneMapped: false })
+      );
+      ring.rotation.x = -Math.PI / 2;
+      ring.position.y = 0.002;
+      scene.add(ring);
+
+      const start = window.WRAP_STATE || { color: { hex: "#ecebe6" }, finish: "Gloss" };
+      const body = new THREE.MeshPhysicalMaterial({
+        color: start.color.hex,
+        ...FINISHES[start.finish],
+        iridescenceIOR: 1.8,
+        iridescenceThicknessRange: [180, 900],
+      });
+      const details = new THREE.MeshStandardMaterial({ color: 0xe2e2e2, metalness: 1, roughness: 0.3 });
+      const trim = new THREE.MeshStandardMaterial({ color: 0x111111, metalness: 0.6, roughness: 0.4 });
+      const glass = new THREE.MeshPhysicalMaterial({
+        color: 0x0a0a0c,
+        metalness: 0.2,
+        roughness: 0.02,
+        transmission: 0.25,
+        transparent: true,
+        opacity: 0.92,
+        clearcoat: 1,
+      });
+
+      const manager = new THREE.LoadingManager();
+      manager.onProgress = (_u, loaded, total) => emit("car:progress", loaded / total);
+      const dracoPath =
+        location.protocol === "file:"
+          ? "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/libs/draco/gltf/"
+          : "assets/draco/";
+      const draco = new DRACOLoader(manager).setDecoderPath(dracoPath);
+      const loader = new GLTFLoader(manager).setDRACOLoader(draco);
+
+      const gltf = await new Promise((res, rej) => {
+        if (window.CAR_GLB_B64) {
+          try {
+            const buffer = base64ToArrayBuffer(window.CAR_GLB_B64);
+            loader.parse(buffer, "", res, rej);
+            return;
+          } catch (e) {
+            console.warn("Base64 parse fallback to URL:", e);
+          }
+        }
+        loader.load(
+          "assets/models/car.glb",
+          res,
+          (e) => e.total && emit("car:progress", (e.loaded / e.total) * 0.95),
+          rej
+        );
+      });
+
+      const car = gltf.scene.children[0];
+      const setMat = (name, m) => {
+        const o = car.getObjectByName(name);
+        if (o) o.material = m;
+      };
+      setMat("body", body);
+      ["rim_fl", "rim_fr", "rim_rr", "rim_rl"].forEach((n) => setMat(n, details));
+      setMat("trim", trim);
+      setMat("glass", glass);
+      const wheels = ["wheel_fl", "wheel_fr", "wheel_rl", "wheel_rr"].map((n) => car.getObjectByName(n)).filter(Boolean);
+
+      const aoSrc = window.CAR_AO_B64 || "assets/models/car_ao.png";
+      const ao = await new THREE.TextureLoader().loadAsync(aoSrc);
+      const shadow = new THREE.Mesh(
+        new THREE.PlaneGeometry(0.655 * 4, 1.3 * 4),
+        new THREE.MeshBasicMaterial({
+          map: ao,
+          blending: THREE.MultiplyBlending,
+          toneMapped: false,
+          transparent: true,
+          premultipliedAlpha: true,
+        })
+      );
+      shadow.rotation.x = -Math.PI / 2;
+      shadow.renderOrder = 2;
+      car.add(shadow);
+      scene.add(car);
+
+      const rim = new THREE.SpotLight(0xffffff, 36, 14, Math.PI / 6, 0.85);
+      rim.position.set(-4, 4.2, 4);
+      scene.add(rim);
+
+      const target = { color: new THREE.Color(start.color.hex), ...FINISHES[start.finish] };
+      let flash = 0;
+      window.addEventListener("wrap:change", (e) => {
+        target.color.set(e.detail.hex);
+        Object.assign(target, FINISHES[e.detail.finish] || FINISHES.Gloss);
+        flash = 1;
+        controls.autoRotate = false;
+        clearTimeout(resumeTimer);
+        resumeTimer = setTimeout(() => (controls.autoRotate = !reduceMotion), 3500);
+      });
+
+      function resize() {
+        const w = stage.clientWidth || stage.parentElement?.clientWidth || 640;
+        const h = stage.clientHeight || stage.parentElement?.clientHeight || 480;
+        if (!w || !h) return;
+        renderer.setSize(w, h, false);
+        camera.aspect = w / h;
+        camera.clearViewOffset();
+        camera.fov = w > 760 ? 34 : 38;
+        const dist = w > 760 ? 7.6 : 7.0;
+        const dir = camera.position.clone().sub(controls.target).normalize();
+        camera.position.copy(controls.target).addScaledVector(dir, dist);
+        controls.minDistance = controls.maxDistance = dist;
+        camera.updateProjectionMatrix();
+      }
+      new ResizeObserver(resize).observe(stage);
+      resize();
+
+      let visible = true;
+      new IntersectionObserver(([en]) => (visible = en.isIntersecting)).observe(stage);
+
+      const clock = new THREE.Clock();
+      renderer.setAnimationLoop(() => {
+        const dt = Math.min(clock.getDelta(), 0.05);
+        if (!visible || document.hidden) return;
+        const k = 1 - Math.pow(0.0015, dt);
+        body.color.lerp(target.color, k);
+        for (const p of LERP_KEYS) {
+          body[p] += (target[p] - body[p]) * k;
+        }
+        const t = clock.elapsedTime;
+        wheels.forEach((w) => (w.rotation.x = -t * Math.PI * 0.6));
+        if (flash > 0) flash = Math.max(0, flash - dt * 1.6);
+        ring.scale.setScalar(1 + flash * 0.1);
+        ring.material.opacity = 0.24 + flash * 0.5 + Math.sin(t * 2) * 0.05;
+        controls.update();
+        renderer.render(scene, camera);
+      });
+
+      emit("car:progress", 1);
+      emit("car:ready");
+    }
+
+    function radialTexture(stops) {
+      const c = document.createElement("canvas");
+      c.width = c.height = 512;
+      const g = c.getContext("2d");
+      const grd = g.createRadialGradient(256, 256, 0, 256, 256, 256);
+      stops.forEach(([o, col]) => grd.addColorStop(o, col));
+      g.fillStyle = grd;
+      g.fillRect(0, 0, 512, 512);
+      const tex = new THREE.CanvasTexture(c);
+      tex.colorSpace = THREE.SRGBColorSpace;
+      return tex;
+    }
+
+    if (!stage || !supportsWebGL()) {
+      emit("car:error", "no-webgl");
+    } else {
+      init().catch((err) => {
+        console.error(err);
+        emit("car:error", String(err));
+      });
+    }
+  </script>
+</body>
+</html>
