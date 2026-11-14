@@ -1,4 +1,4 @@
-/* Leslie Abiola portfolio — Portfolite-inspired UI & interactive mechanics.
+/* Leslie Abiola portfolio · Portfolite-inspired UI & interactive mechanics.
    All content comes from js/content.js (window.CONTENT). */
 (function () {
   "use strict";
@@ -155,6 +155,8 @@
     });
   }
 
+  const safeUrl = (u) => (u ? encodeURI(String(u)) : "");
+
   /* ---------- Hero 3-Card Bento Showcase & Category Pills ---------- */
   const renderBentoCards = (container, items) => {
     if (!container || !Array.isArray(items)) return;
@@ -162,10 +164,19 @@
       const a = el("a", {
         class: "pf-bento-card reveal" + (card.featured ? " pf-bento-card--featured" : ""),
         href: card.href || "#work",
+        "aria-label": card.alt || card.title || "Showcase item",
       });
+      const altText = esc(card.alt || card.title || "");
+      const mediaHtml = card.video
+        ? `<video class="pf-bento-video" src="${esc(safeUrl(card.video))}" ${
+            card.poster ? `poster="${esc(safeUrl(card.poster))}"` : ""
+          } autoplay muted loop playsinline preload="auto" aria-label="${altText}" title="${altText}"></video>
+           <span class="pf-live-video-pill"><span class="pf-dot-sm"></span><span>Autoplay Video</span></span>`
+        : `<img src="${esc(safeUrl(card.image))}" alt="${altText}" loading="lazy" />`;
+
       a.innerHTML = `
         <div class="pf-mask-border" aria-hidden="true"></div>
-        <img src="${esc(card.image)}" alt="${esc(card.title)}" loading="lazy" />
+        ${mediaHtml}
         <div class="pf-bento-bar">
           <div class="pf-bento-meta">
             <span class="pf-bento-title">${esc(card.title)}</span>
@@ -178,6 +189,93 @@
   };
   renderBentoCards($("#heroShowcase"), C.heroCards);
   renderBentoCards($("#signatureShowcase"), C.signatureBuilds);
+
+  /* ---------- Education (University of Sunderland) & Zeus3D Photo Grids ---------- */
+  const renderPhotoFeatureGrid = (container, list) => {
+    if (!container || !Array.isArray(list)) return;
+    list.forEach((item) => {
+      const fig = el("figure", {
+        class: "pf-edu-photo-card reveal",
+        tabindex: "0",
+        role: "button",
+        "aria-label": item.alt || item.title || "View photo",
+        "data-src": safeUrl(item.src),
+        "data-alt": item.alt || item.title || "",
+        "data-title": [item.title, item.subtitle].filter(Boolean).join(" · "),
+      });
+      fig.innerHTML = `
+        <div class="pf-mask-border" aria-hidden="true"></div>
+        <img src="${esc(safeUrl(item.src))}" alt="${esc(item.alt || item.title || "")}" loading="lazy" />
+        <figcaption class="pf-edu-photo-cap">
+          <strong>${esc(item.title || "")}</strong>
+          ${item.subtitle ? `<span>${esc(item.subtitle)}</span>` : ""}
+        </figcaption>`;
+      container.append(fig);
+    });
+  };
+  renderPhotoFeatureGrid($("#eduGalleryHome"), C.educationGallery);
+  renderPhotoFeatureGrid($("#eduGalleryPage"), C.educationGallery);
+  renderPhotoFeatureGrid($("#zeus3dGalleryHome"), C.zeus3dGallery);
+  renderPhotoFeatureGrid($("#zeus3dGalleryPage"), C.zeus3dGallery);
+
+  /* ---------- Autoplaying Work & Process Videos Grid ---------- */
+  const workVideoGrid = $("#workVideoGrid");
+  if (workVideoGrid && Array.isArray(C.workVideos)) {
+    C.workVideos.forEach((v) => {
+      const card = el("article", { class: "pf-video-card reveal" });
+      const altText = esc(v.alt || v.title || "Leslie Abiola work video");
+      card.innerHTML = `
+        <div class="pf-mask-border" aria-hidden="true"></div>
+        <div class="pf-video-stage">
+          <video
+            class="pf-autoplay-video"
+            src="${esc(safeUrl(v.src))}"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+            aria-label="${altText}"
+            title="${altText}"
+          ></video>
+          <div class="pf-video-top-badges">
+            <span class="pf-tag-pill"><span class="pf-dot-sm"></span><span>${esc(v.tag || "Live Work")}</span></span>
+            <div class="pf-video-actions">
+              <button type="button" class="pf-vid-btn pf-vid-mute" aria-label="Toggle audio">🔇 Muted</button>
+              <button type="button" class="pf-vid-btn pf-vid-expand" data-src="${esc(safeUrl(v.src))}" data-title="${esc(
+        v.title
+      )}" data-alt="${altText}" aria-label="Expand video">⛶ Expand</button>
+            </div>
+          </div>
+        </div>
+        <div class="pf-video-body">
+          <h3 class="pf-video-title">${esc(v.title)}</h3>
+          <p class="pf-video-caption">${esc(v.caption || "")}</p>
+        </div>`;
+      workVideoGrid.append(card);
+    });
+
+    workVideoGrid.addEventListener("click", (e) => {
+      const muteBtn = e.target.closest(".pf-vid-mute");
+      if (muteBtn) {
+        const vid = muteBtn.closest(".pf-video-stage")?.querySelector("video");
+        if (vid) {
+          vid.muted = !vid.muted;
+          muteBtn.textContent = vid.muted ? "🔇 Muted" : "🔊 Sound On";
+        }
+        return;
+      }
+      const expandBtn = e.target.closest(".pf-vid-expand");
+      if (expandBtn) {
+        openCustomMediaLb({
+          src: expandBtn.dataset.src,
+          video: true,
+          title: expandBtn.dataset.title,
+          alt: expandBtn.dataset.alt,
+        });
+      }
+    });
+  }
 
   /* ---------- Biography Pillars & Chapters (Home & Dedicated Bio Page) ---------- */
   const renderPillars = (container) => {
@@ -398,6 +496,7 @@
       if (!r) return;
       r.classList.add("revealed");
       markDiscovered(r.dataset.secret);
+      syncRedactGuideState();
     });
     paras.addEventListener("keydown", (e) => {
       if (e.key !== "Enter" && e.key !== " ") return;
@@ -406,6 +505,7 @@
       e.preventDefault();
       r.classList.add("revealed");
       markDiscovered(r.dataset.secret);
+      syncRedactGuideState();
     });
   }
 
@@ -414,7 +514,7 @@
     C.about.quotes.forEach((q) => {
       const b = el("blockquote", { class: "quote reveal" });
       b.append(document.createTextNode("“" + q.text + "”"));
-      if (q.source) b.append(el("cite", { text: "— Leslie Abiola, featured in " + q.source }));
+      if (q.source) b.append(el("cite", { text: "Leslie Abiola, featured in " + q.source }));
       quotes.append(b);
     });
   }
@@ -603,22 +703,28 @@
     });
   }
 
-  /* ---------- Gallery & Filter Tabs ---------- */
+  /* ---------- Gallery & Filter Tabs (Supports Images & Autoplaying Work Videos) ---------- */
   const gallery = $("#gallery");
   const filters = $("#filters");
   const items = (C.gallery || []).filter((g) => g.src);
   if (gallery) {
     items.forEach((g, i) => {
+      const altText = esc(g.alt || g.title || "Leslie Abiola portfolio item");
       const b = el("button", {
-        class: "g-item reveal",
+        class: "g-item reveal" + (g.video ? " g-item--video" : ""),
         type: "button",
         "data-loc": g.location || "",
         "data-i": i,
-        "aria-label": "View " + (g.title || "project"),
+        "aria-label": g.alt || "View " + (g.title || "project"),
       });
+      const mediaHtml = g.video
+        ? `<video class="g-video" src="${esc(safeUrl(g.src))}" autoplay muted loop playsinline preload="metadata" aria-label="${altText}" title="${altText}"></video>
+           <span class="pf-live-video-pill"><span class="pf-dot-sm"></span><span>Video</span></span>`
+        : `<img src="${esc(safeUrl(g.src))}" alt="${altText}" loading="lazy" />`;
+
       b.innerHTML = `
         <div class="pf-mask-border" aria-hidden="true"></div>
-        <img src="${esc(g.src)}" alt="${esc(g.title || "Zeuswrap project")}" loading="lazy" />
+        ${mediaHtml}
         <span class="g-cap">
           <span>${esc(g.title || "")}</span>
           ${g.location ? `<span class="pf-bento-sub">${esc(g.location)} ↗</span>` : ""}
@@ -636,8 +742,6 @@
   }
   if (filters) {
     const locs = ["All", ...new Set(items.map((g) => g.location).filter(Boolean))];
-    if (!locs.includes("Nigeria")) locs.push("Nigeria");
-    if (!locs.includes("UK")) locs.push("UK");
     locs.forEach((l, i) =>
       filters.append(el("button", { class: "filter", type: "button", role: "tab", "aria-selected": i === 0, "data-loc": l, text: l }))
     );
@@ -650,26 +754,57 @@
     });
   }
 
-  /* Lightbox */
+  /* ---------- Lightbox (Images + Videos) ---------- */
   const lb = $("#lightbox");
   const lbImg = $("#lbImg");
+  const lbVid = $("#lbVid");
   const lbCap = $("#lbCap");
   let lbIndex = 0;
   let lastFocus = null;
-  const openLb = (i) => {
-    if (!items.length || !lb) return;
-    lbIndex = (i + items.length) % items.length;
-    lbImg.src = items[lbIndex].src;
-    lbImg.alt = items[lbIndex].title || "";
-    lbCap.textContent = [items[lbIndex].title, items[lbIndex].location].filter(Boolean).join(" · ");
+
+  function showLightboxItem(item) {
+    if (!lb || !item) return;
+    const src = safeUrl(item.src);
+    if (item.video && lbVid) {
+      if (lbImg) lbImg.hidden = true;
+      lbVid.hidden = false;
+      lbVid.src = src;
+      lbVid.setAttribute("aria-label", item.alt || item.title || "");
+      lbVid.play?.().catch(() => {});
+    } else if (lbImg) {
+      if (lbVid) {
+        lbVid.pause?.();
+        lbVid.hidden = true;
+      }
+      lbImg.hidden = false;
+      lbImg.src = src;
+      lbImg.alt = item.alt || item.title || "";
+    }
+    if (lbCap) {
+      lbCap.textContent = [item.title, item.location].filter(Boolean).join(" · ");
+    }
     if (lb.hidden) {
       lastFocus = document.activeElement;
       lb.hidden = false;
-      $("#lbClose").focus();
+      $("#lbClose")?.focus();
     }
+  }
+
+  function openCustomMediaLb(item) {
+    showLightboxItem(item);
+  }
+
+  const openLb = (i) => {
+    if (!items.length || !lb) return;
+    lbIndex = (i + items.length) % items.length;
+    showLightboxItem(items[lbIndex]);
   };
   const closeLb = () => {
     if (!lb) return;
+    if (lbVid) {
+      lbVid.pause?.();
+      lbVid.removeAttribute("src");
+    }
     lb.hidden = true;
     if (lastFocus) lastFocus.focus();
   };
@@ -679,6 +814,31 @@
       if (b) openLb(+b.dataset.i);
     });
   }
+  $$(".pf-edu-photo-grid").forEach((grid) => {
+    grid.addEventListener("click", (e) => {
+      const card = e.target.closest(".pf-edu-photo-card");
+      if (!card) return;
+      openCustomMediaLb({
+        src: card.dataset.src,
+        video: false,
+        title: card.dataset.title,
+        alt: card.dataset.alt,
+      });
+    });
+    grid.addEventListener("keydown", (e) => {
+      if (e.key !== "Enter" && e.key !== " ") return;
+      const card = e.target.closest(".pf-edu-photo-card");
+      if (!card) return;
+      e.preventDefault();
+      openCustomMediaLb({
+        src: card.dataset.src,
+        video: false,
+        title: card.dataset.title,
+        alt: card.dataset.alt,
+      });
+    });
+  });
+
   if ($("#lbClose")) $("#lbClose").addEventListener("click", closeLb);
   if (lb) lb.addEventListener("click", (e) => e.target === lb && closeLb());
   document.addEventListener("keydown", (e) => {
@@ -687,6 +847,26 @@
     if (e.key === "ArrowRight") openLb(lbIndex + 1);
     if (e.key === "ArrowLeft") openLb(lbIndex - 1);
   });
+
+  /* ---------- Autoplay Video Viewport Observer ---------- */
+  const allAutoVideos = $$("video[autoplay]");
+  if (allAutoVideos.length && "IntersectionObserver" in window) {
+    const vidIO = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((en) => {
+          const v = en.target;
+          if (en.isIntersecting) {
+            v.muted = true;
+            v.play?.().catch(() => {});
+          } else {
+            v.pause?.();
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    allAutoVideos.forEach((v) => vidIO.observe(v));
+  }
 
   /* ---------- Stats Banner ---------- */
   const statsEl = $("#stats");
@@ -1116,11 +1296,47 @@
     });
   }
 
-  /* ---------- Discovery Progress Pill ---------- */
+  /* ---------- Discovery Progress Pill & Reveal All Controls ---------- */
   const discEl = $("#discover");
   const discCount = $("#discoverCount");
   const discArc = $("#discoverArc");
   const revealAllBtn = $("#revealAll");
+  const revealAllInlineBtn = $("#revealAllInline");
+  const revealAllInlineText = $("#revealAllInlineText");
+  const redactGuide = $("#redactGuide");
+
+  function syncRedactGuideState() {
+    const allRedacts = $$(".redact");
+    if (!allRedacts.length) return;
+    const allRevealed = allRedacts.every((r) => r.classList.contains("revealed"));
+    if (revealAllInlineBtn) {
+      revealAllInlineBtn.classList.toggle("is-revealed", allRevealed);
+      revealAllInlineBtn.setAttribute("aria-pressed", allRevealed ? "true" : "false");
+    }
+    if (revealAllInlineText) {
+      revealAllInlineText.textContent = allRevealed ? "All Revealed ✓" : "Reveal All at Once";
+    }
+    if (redactGuide) {
+      redactGuide.classList.toggle("all-revealed", allRevealed);
+    }
+  }
+
+  function revealAllMilestones() {
+    $$(".redact").forEach((r) => {
+      r.classList.add("revealed");
+      markDiscovered(r.dataset.secret);
+    });
+    $$(".t-item").forEach((t) => {
+      t.classList.add("revealed");
+      markDiscovered(t.dataset.secret);
+    });
+    if (portrait) {
+      portrait.classList.add("revealed");
+      markDiscovered("portrait");
+    }
+    syncRedactGuideState();
+    nextFact();
+  }
 
   function updateDiscoveryUI() {
     if (!discEl || !discCount || !discArc) return;
@@ -1132,23 +1348,13 @@
     discEl.classList.toggle("complete", count >= totalDiscoverable && totalDiscoverable > 0);
   }
   updateDiscoveryUI();
+  syncRedactGuideState();
 
   if (revealAllBtn) {
-    revealAllBtn.addEventListener("click", () => {
-      $$(".redact").forEach((r) => {
-        r.classList.add("revealed");
-        markDiscovered(r.dataset.secret);
-      });
-      $$(".t-item").forEach((t) => {
-        t.classList.add("revealed");
-        markDiscovered(t.dataset.secret);
-      });
-      if (portrait) {
-        portrait.classList.add("revealed");
-        markDiscovered("portrait");
-      }
-      nextFact();
-    });
+    revealAllBtn.addEventListener("click", revealAllMilestones);
+  }
+  if (revealAllInlineBtn) {
+    revealAllInlineBtn.addEventListener("click", revealAllMilestones);
   }
 
   /* ---------- Scroll Reveal Observer ---------- */

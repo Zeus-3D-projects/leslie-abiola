@@ -1,5 +1,5 @@
 /* =====================================================================
-   PORTFOLITE-INSPIRED DARK LUXURY PORTFOLIO — LESLIE ABIOLA / ZEUSWRAP
+   PORTFOLITE-INSPIRED DARK LUXURY PORTFOLIO · LESLIE ABIOLA / ZEUSWRAP
    Tokens & Typography modeled directly after Portfolite Framer Template
    ===================================================================== */
 :root {
@@ -1098,7 +1098,7 @@ h1, h2, h3, h4, p, figure, blockquote {
   gap: 24px;
 }
 
-/* Tap hint & Redaction reveal */
+/* Tap hint, SVG Guide Banner & Redaction reveal */
 .tap-hint {
   font-size: 13px;
   color: var(--token-muted);
@@ -1118,6 +1118,114 @@ h1, h2, h3, h4, p, figure, blockquote {
   50% { opacity: 0.2; }
 }
 
+.pf-redact-guide {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 13px 16px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+.pf-redact-guide.all-revealed {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+}
+.pf-redact-guide-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.pf-redact-svg-wrap {
+  flex-shrink: 0;
+  width: 52px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.pf-redact-svg {
+  width: 44px;
+  height: 35px;
+  overflow: visible;
+}
+.pf-svg-hand {
+  transform-origin: 24px 18px;
+  animation: redactTapBob 2.1s var(--ease) infinite;
+}
+.pf-svg-pulse {
+  transform-origin: 23px 12px;
+  animation: redactTapPulse 2.1s var(--ease) infinite;
+}
+.pf-redact-guide.all-revealed .pf-svg-hand,
+.pf-redact-guide.all-revealed .pf-svg-pulse {
+  animation: none;
+}
+@keyframes redactTapBob {
+  0%, 100% { transform: translateY(0) scale(1); }
+  45% { transform: translateY(-2.5px) scale(0.95); }
+  65% { transform: translateY(0.5px) scale(1); }
+}
+@keyframes redactTapPulse {
+  0%, 100% { transform: scale(0.75); opacity: 0.25; }
+  45% { transform: scale(1.2); opacity: 0.9; }
+  75% { transform: scale(1.35); opacity: 0; }
+}
+.pf-redact-guide-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.pf-redact-guide-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--token-white);
+  line-height: 1.35;
+}
+.pf-redact-guide-sub {
+  font-size: 12.5px;
+  color: var(--token-muted);
+  line-height: 1.4;
+}
+.pf-reveal-all-inline {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 15px;
+  border-radius: 999px;
+  background: var(--token-white);
+  color: var(--token-black);
+  border: 1px solid var(--token-white);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s, background 0.25s, color 0.25s, border-color 0.25s;
+}
+.pf-reveal-all-inline:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(255, 255, 255, 0.2);
+}
+.pf-reveal-all-inline.is-revealed {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.85);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: none;
+  cursor: default;
+}
+.pf-reveal-eye-svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
 .pf-bio-paras {
   display: flex;
   flex-direction: column;
@@ -1131,23 +1239,32 @@ h1, h2, h3, h4, p, figure, blockquote {
 
 .redact {
   cursor: pointer;
-  border-radius: 4px;
-  padding: 1px 0.2em;
-  margin: 0 -0.02em;
+  border-radius: 5px;
+  padding: 1px 0.3em;
+  margin: 0 0.02em;
   color: transparent;
-  background: linear-gradient(var(--token-white), var(--token-white)) no-repeat right center / 100% 100%;
+  background-color: transparent;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='14' viewBox='0 0 44 14' fill='none'%3E%3Ccircle cx='7' cy='7' r='4.5' stroke='%230d0d0d' stroke-opacity='0.32' stroke-width='1.1'/%3E%3Ccircle cx='7' cy='7' r='2' fill='%230d0d0d' fill-opacity='0.78'/%3E%3Cpath d='M16 4h6M19 4v6.5M24.5 10.5l2.3-6.5h.4l2.3 6.5M25.4 8.3h3.2M32 10.5V4h2.8a1.9 1.9 0 0 1 0 3.8H32' stroke='%230d0d0d' stroke-opacity='0.76' stroke-width='1.35' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"),
+    linear-gradient(var(--token-white), var(--token-white));
+  background-repeat: no-repeat, no-repeat;
+  background-position: center center, right center;
+  background-size: 44px 14px, 100% 100%;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
-  transition: background-size 0.7s var(--ease), color 0.4s 0.2s;
+  transition: background-size 0.55s var(--ease), color 0.38s 0.15s, box-shadow 0.25s;
 }
-.redact:hover {
-  background-size: 93% 100%;
+.redact:hover,
+.redact:focus-visible {
+  background-size: 48px 15px, 94% 100%;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.25);
 }
 .redact.revealed {
-  background-size: 0% 100%;
+  background-size: 0 14px, 0% 100%;
   color: var(--token-white);
   cursor: text;
   font-weight: 600;
+  box-shadow: none;
 }
 
 .quote {
@@ -2091,7 +2208,7 @@ h1, h2, h3, h4, p, figure, blockquote {
 }
 .news-scroll-track {
   display: flex;
-  gap: 32px; /* 2rem — matches JS loop calculation */
+  gap: 32px; /* 2rem · matches JS loop calculation */
   width: max-content;
   will-change: transform;
 }
@@ -2995,10 +3112,196 @@ h1, h2, h3, h4, p, figure, blockquote {
   color: var(--token-white);
 }
 
+/* ============ Autoplaying Work Videos, Education Gallery & Zeus3D Grids ============ */
+.pf-bento-video,
+.g-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.75s var(--ease), filter 0.75s var(--ease);
+}
+.pf-bento-card:hover .pf-bento-video,
+.g-item:hover .g-video {
+  transform: scale(1.04);
+}
+.pf-live-video-pill {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border-radius: 99px;
+  background: rgba(10, 10, 10, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--token-white);
+  pointer-events: none;
+}
+
+/* Education & Zeus3D 4-Card Photo Grids */
+.pf-edu-gallery-wrap {
+  margin-top: 64px;
+}
+.pf-edu-gallery-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.pf-edu-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.pf-edu-photo-card {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--token-surface);
+  border: 1px solid var(--token-border);
+  cursor: pointer;
+}
+.pf-edu-photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  transition: transform 0.65s var(--ease), filter 0.65s var(--ease);
+}
+.pf-edu-photo-card:hover img {
+  transform: scale(1.05);
+}
+.pf-edu-photo-cap {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  z-index: 3;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(10, 10, 10, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.pf-edu-photo-cap strong {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--token-white);
+  line-height: 1.25;
+}
+.pf-edu-photo-cap span {
+  font-size: 11.5px;
+  color: var(--token-muted);
+}
+
+/* 4-Card Autoplaying Work & Process Video Grid */
+.pf-video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+.pf-video-card {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  background: var(--token-surface);
+  border: 1px solid var(--token-border);
+  display: flex;
+  flex-direction: column;
+}
+.pf-video-stage {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: #050505;
+  overflow: hidden;
+}
+.pf-autoplay-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.pf-video-top-badges {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.pf-video-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.pf-vid-btn {
+  padding: 6px 12px;
+  border-radius: 99px;
+  background: rgba(10, 10, 10, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--token-white);
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+}
+.pf-vid-btn:hover {
+  background: var(--token-white);
+  color: var(--token-black);
+}
+.pf-video-body {
+  padding: 24px 26px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pf-video-title {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--token-white);
+  line-height: 1.3;
+}
+.pf-video-caption {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--token-muted);
+}
+
+#lbVid {
+  max-width: min(92vw, 1080px);
+  max-height: 78vh;
+  border-radius: 20px;
+  border: 1px solid var(--token-border);
+  background: #000;
+}
+
 @media (max-width: 980px) {
   .pf-founder-quick-grid,
   .pf-chapters-grid,
-  .pf-ventures-grid {
+  .pf-ventures-grid,
+  .pf-edu-photo-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -3006,11 +3309,20 @@ h1, h2, h3, h4, p, figure, blockquote {
   .pf-founder-quick-grid,
   .pf-dossier-grid,
   .pf-chapters-grid,
-  .pf-ventures-grid {
+  .pf-ventures-grid,
+  .pf-edu-photo-grid,
+  .pf-video-grid {
     grid-template-columns: 1fr;
   }
   .pf-founder-pill-cta {
     display: none;
+  }
+  .pf-redact-guide {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .pf-reveal-all-inline {
+    justify-content: center;
   }
   .pf-uni-row {
     flex-direction: column;
