@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://zeuswraphq.com/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://zeuswraphq.com/assets/images/leslie-portrait.png</image:loc>
+      <image:title>Leslie Abiola beside a classic race car</image:title>
+      <image:caption>Leslie Abiola, Founder and CEO of Zeuswrap, Zeus3D, and Handwrk</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://zeuswraphq.com/assets/images/wrap-ferrari-red.jpg</image:loc>
+      <image:title>Zeuswrap Satin Crimson Ferrari Studio Wrap</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zeuswraphq.com/assets/images/lesie%20abiola%203d%20.jpeg</image:loc>
+      <image:title>Leslie Abiola showcasing Zeus3D 3D-printed Formula 1 sculpture</image:title>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://zeuswraphq.com/assets/images/leslie-portrait.png</video:thumbnail_loc>
+      <video:title>McLaren Senna Carbon-Fiber Wrap Craft by Leslie Abiola</video:title>
+      <video:description>Leslie Abiola precision-wrapping the rear diffuser and wing of a McLaren Senna at Zeuswrap.</video:description>
+      <video:content_loc>https://zeuswraphq.com/assets/images/leslie%20working%20on%20a%20black%20car.mp4</video:content_loc>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://zeuswraphq.com/leslie-abiola.html</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://zeuswraphq.com/assets/images/lesie%20abiola%20edu.jpeg</image:loc>
+      <image:title>Leslie Abiola University of Sunderland MSc International Business Graduation</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zeuswraphq.com/assets/images/lesie%20biography%20image.jpeg</image:loc>
+      <image:title>Leslie Abiola inspecting a Porsche 963 prototype race car</image:title>
+    </image:image>
+  </url>
+</urlset>

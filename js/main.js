@@ -172,7 +172,7 @@
             card.poster ? `poster="${esc(safeUrl(card.poster))}"` : ""
           } autoplay muted loop playsinline preload="auto" aria-label="${altText}" title="${altText}"></video>
            <span class="pf-live-video-pill"><span class="pf-dot-sm"></span><span>Autoplay Video</span></span>`
-        : `<img src="${esc(safeUrl(card.image))}" alt="${altText}" loading="lazy" />`;
+        : `<img src="${esc(safeUrl(card.image))}" alt="${altText}" loading="lazy" decoding="async" />`;
 
       a.innerHTML = `
         <div class="pf-mask-border" aria-hidden="true"></div>
@@ -205,7 +205,7 @@
       });
       fig.innerHTML = `
         <div class="pf-mask-border" aria-hidden="true"></div>
-        <img src="${esc(safeUrl(item.src))}" alt="${esc(item.alt || item.title || "")}" loading="lazy" />
+        <img src="${esc(safeUrl(item.src))}" alt="${esc(item.alt || item.title || "")}" loading="lazy" decoding="async" />
         <figcaption class="pf-edu-photo-cap">
           <strong>${esc(item.title || "")}</strong>
           ${item.subtitle ? `<span>${esc(item.subtitle)}</span>` : ""}
@@ -720,7 +720,7 @@
       const mediaHtml = g.video
         ? `<video class="g-video" src="${esc(safeUrl(g.src))}" autoplay muted loop playsinline preload="metadata" aria-label="${altText}" title="${altText}"></video>
            <span class="pf-live-video-pill"><span class="pf-dot-sm"></span><span>Video</span></span>`
-        : `<img src="${esc(safeUrl(g.src))}" alt="${altText}" loading="lazy" />`;
+        : `<img src="${esc(safeUrl(g.src))}" alt="${altText}" loading="lazy" decoding="async" />`;
 
       b.innerHTML = `
         <div class="pf-mask-border" aria-hidden="true"></div>
@@ -1009,7 +1009,7 @@
     const createCard = (item) => `
       <div class="news-card" style="flex-shrink: 0;">
         <div class="news-image">
-          <img src="${esc(item.image)}" alt="${esc(item.source)}" loading="lazy" />
+          <img src="${esc(item.image)}" alt="${esc(item.source)}" loading="lazy" decoding="async" />
         </div>
         <div class="news-content">
           <span class="news-source">${esc(item.source)}</span>

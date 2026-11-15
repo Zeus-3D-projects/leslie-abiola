@@ -1,0 +1,24 @@
+{
+  "name": "Leslie Abiola · Zeuswrap, Zeus3D & Handwrk",
+  "short_name": "Leslie Abiola",
+  "description": "Founder & CEO of Zeuswrap, Zeus3D, and Handwrk. Interactive 3D car wrap studio, biography, and ventures.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "any",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "assets/images/zeuswrap-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/zeuswrap-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
